@@ -1,0 +1,4 @@
+INDEX VERSION 1.129+C:\Users\vabil\Documents\GitHub\ICS4U0\.metadata\.plugins\org.eclipse.jdt.core
+2670882181.index
+4257325822.index
+476878951.index
