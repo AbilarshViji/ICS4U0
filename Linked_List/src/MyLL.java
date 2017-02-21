@@ -6,18 +6,25 @@ public class MyLL {
 
 	void addToHead(StudentInfo itemToAdd) {
 		numInList++;
-		itemToAdd.next = head;
+		itemToAdd.setNext(head);
 		head = itemToAdd;
+		if (numInList == 1) {
+			tail = head;
+		}
 	}
 
 	void addToTail(StudentInfo itemToAdd) {
-		numInList++;
+		// StudentInfo tempStudent;
 		if (numInList == 0) {
 			tail = itemToAdd;
+			head = tail;
+			numInList++;
 		} else {
-			tail.next = itemToAdd;
+			tail.setNext(itemToAdd);
 			tail = itemToAdd;
+			numInList++;
 		}
+
 	}
 
 	StudentInfo removeFromTail() {
@@ -35,27 +42,41 @@ public class MyLL {
 		} else {// 2+ students in linked list
 			numInList--;
 			tempStudent = head;
-			while (tempStudent.next != tail)
-				tempStudent = tempStudent.next;
+			while (tempStudent.getNext() != tail) {
+				tempStudent = tempStudent.getNext();
+			}
 		}
 		tail = tempStudent;
-		tempStudentReturn = tempStudent.next;
+		tempStudentReturn = tempStudent.getNext();
 
-		tempStudent.next = null;
+		tempStudent.setNext(null);
 		return tempStudentReturn;
 	}
 
 	StudentInfo removeFromHead() {
 		StudentInfo tempStudent;
-		StudentInfo tempStudentReturn;
 		if (numInList == 0) {
 			System.out.println("No items in linked list");
 			return null;
 		}
-		
+		tempStudent = head;
+		head = tempStudent.getNext();
+		tempStudent.setNext(null);
+		numInList--;
+		return tempStudent;
 	}
-	
-	void displayList() {
 
+	void displayList() {
+		StudentInfo tempStudent;
+		if (numInList == 0) {
+			System.out.println("No items in linked list");
+		} else {
+			tempStudent = head;
+			for (int i = 0; i < numInList; i++) {
+				// System.out.println(numInList);
+				System.out.println(tempStudent.getFirstName());
+				tempStudent = tempStudent.getNext();
+			}
+		}
 	}
 }
