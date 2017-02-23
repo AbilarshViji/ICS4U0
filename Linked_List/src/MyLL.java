@@ -1,4 +1,3 @@
-
 public class MyLL {
 	StudentInfo head;
 	StudentInfo tail;
@@ -14,7 +13,6 @@ public class MyLL {
 	}
 
 	void addToTail(StudentInfo itemToAdd) {
-		// StudentInfo tempStudent;
 		if (numInList == 0) {
 			tail = itemToAdd;
 			head = tail;
@@ -24,12 +22,11 @@ public class MyLL {
 			tail = itemToAdd;
 			numInList++;
 		}
-
 	}
 
 	StudentInfo removeFromTail() {
 		StudentInfo tempStudent;
-		StudentInfo tempStudentReturn;
+		final StudentInfo tempStudentReturn;
 		if (numInList == 0) {
 			System.out.println("No items in linked list");
 			return null;
@@ -54,7 +51,7 @@ public class MyLL {
 	}
 
 	StudentInfo removeFromHead() {
-		StudentInfo tempStudent;
+		final StudentInfo tempStudent;
 		if (numInList == 0) {
 			System.out.println("No items in linked list");
 			return null;
