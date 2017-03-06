@@ -14,9 +14,7 @@ public class MyLL {
 
 	void addToTail(StudentInfo itemToAdd) {
 		if (numInList == 0) {
-			tail = itemToAdd;
-			head = tail;
-			numInList++;
+			addToHead(itemToAdd);
 		} else {
 			tail.setNext(itemToAdd);
 			tail = itemToAdd;
@@ -28,15 +26,9 @@ public class MyLL {
 		StudentInfo tempStudent;
 		final StudentInfo tempStudentReturn;
 		if (numInList == 0) {
-			System.out.println("No items in linked list");
+			print("No items in linked list");
 			return null;
-		} else if (numInList == 1) {
-			numInList--;
-			tempStudent = head;
-			head = null;
-			tail = null;
-			return tempStudent;
-		} else {// 2+ students in linked list
+		}  else {// 2+ students in linked list
 			numInList--;
 			tempStudent = head;
 			while (tempStudent.getNext() != tail) {
@@ -45,7 +37,6 @@ public class MyLL {
 		}
 		tail = tempStudent;
 		tempStudentReturn = tempStudent.getNext();
-
 		tempStudent.setNext(null);
 		return tempStudentReturn;
 	}
@@ -53,11 +44,10 @@ public class MyLL {
 	StudentInfo removeFromHead() {
 		final StudentInfo tempStudent;
 		if (numInList == 0) {
-			System.out.println("No items in linked list");
+			print("No items in linked list");
 			return null;
 		}
-		tempStudent = head;
-		head = tempStudent.getNext();
+		tempStudent = head.getNext();
 		tempStudent.setNext(null);
 		numInList--;
 		return tempStudent;
@@ -70,10 +60,13 @@ public class MyLL {
 		} else {
 			tempStudent = head;
 			for (int i = 0; i < numInList; i++) {
-				// System.out.println(numInList);
-				System.out.println(tempStudent.getFirstName());
+				print(tempStudent.getFirstName());
 				tempStudent = tempStudent.getNext();
 			}
 		}
+	}
+
+	public void print(String data) {
+		System.out.println(data);
 	}
 }

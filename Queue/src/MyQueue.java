@@ -1,14 +1,14 @@
 public class MyQueue {
-	StudentInfo head;
+	StudentInfo front;
 	int numInList;
 
 	void enqueue(StudentInfo itemToAdd) {
 		StudentInfo tempStudent;
 		if (numInList == 0) {
-			head = itemToAdd;
+			front = itemToAdd;
 			numInList++;
 		} else {
-			tempStudent = head;
+			tempStudent = front;
 			while (true) {
 				if (tempStudent.getNext() == null) {
 					tempStudent.setNext(itemToAdd);
@@ -24,14 +24,18 @@ public class MyQueue {
 	StudentInfo dequeue() {
 		final StudentInfo tempStudent;
 		if (numInList == 0) {
-			System.out.println("No items in queue");
+			print("No items in queue");
 			return null;
 		}
-		tempStudent = head;
-		head = tempStudent.getNext();
+		tempStudent = front;
+		front = tempStudent.getNext();
 		tempStudent.setNext(null);
 		numInList--;
 		return tempStudent;
+	}
+
+	StudentInfo peek() {
+		return front;
 	}
 
 	void displayQueue() {
@@ -39,12 +43,16 @@ public class MyQueue {
 		if (numInList == 0) {
 			System.out.println("No items in queue");
 		} else {
-			tempStudent = head;
+			tempStudent = front;
 			for (int i = 0; i < numInList; i++) {
 				// System.out.println(numInList);
-				System.out.println(tempStudent.getFirstName());
+				print(tempStudent.getFirstName());
 				tempStudent = tempStudent.getNext();
 			}
 		}
+	}
+
+	public void print(String data) {
+		System.out.println(data);
 	}
 }
