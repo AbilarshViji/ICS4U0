@@ -1,4 +1,3 @@
-
 public class MyStack {
 	int numInList; //stores the number of objects within the stack
 	StudentInfo top; //stores the top of the stack
@@ -26,8 +25,8 @@ public class MyStack {
 		if (numInList == 0) { //if the stack is empty, return null
 			return null;
 		}
-		tempStudent = top;				
-		top = tempStudent.getNext(); 
+		tempStudent = top;
+		top = tempStudent.getNext(); 	
 		tempStudent.setNext(null);
 		numInList--;
 		return tempStudent;
