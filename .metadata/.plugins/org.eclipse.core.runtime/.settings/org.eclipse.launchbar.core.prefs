@@ -8,6 +8,7 @@ org.eclipse.launchbar.core.descriptorType.default\:Main\ (1)/activeLaunchMode=ru
 org.eclipse.launchbar.core.descriptorType.default\:Main\ (1)/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
 org.eclipse.launchbar.core.descriptorType.default\:Main/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:Main/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:TestBinaryTree/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:TestQueue/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:TestQueue/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
 org.eclipse.launchbar.core.descriptorType.default\:TestStack/activeLaunchMode=run

@@ -1,5 +1,7 @@
 public class TestBinaryTree {
 	public static void main(String[] args) {
+		long startTime = System.nanoTime();
+
 		MyBinaryTree students = new MyBinaryTree();
 		
 		StudentInfo vithuran = new StudentInfo(123456, "Vithuran", "Sadagopan");
@@ -10,16 +12,21 @@ public class TestBinaryTree {
 		StudentInfo abilarsh = new StudentInfo(678901, "Abilarsh", "Viji");
 		StudentInfo murali = new StudentInfo(789012, "Murali", "Andoor");
 		
-		students.addToTree(murali, students.getRoot());
+		students.addToTree(raj, students.getRoot());
 		students.addToTree(mathuran, students.getRoot());
 		students.addToTree(bilaal, students.getRoot());
 		students.addToTree(richard, students.getRoot());
-		students.addToTree(raj, students.getRoot());
+		students.addToTree(murali, students.getRoot());
 		students.addToTree(vithuran, students.getRoot());
 		students.addToTree(abilarsh, students.getRoot());
 		
 		students.traverseInorder(students.getRoot());
+		System.out.println("");
 		students.traversePreorder(students.getRoot());
+		System.out.println("");
 		students.traversePostorder(students.getRoot());
+		System.out.println("");
+		long stopTime = System.nanoTime();
+		System.out.println(stopTime - startTime);
 	}
 }
